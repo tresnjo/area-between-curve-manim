@@ -1,4 +1,4 @@
-The code presents a way of animating the area between two functions.
+The code presents a way of animating the area between two functions in ManimCE using the Differnce geometry boolean.
 
 In the specific example, the functions $f(x) = x^2$ and $f(x) = \sqrt{x}$ are used. 
 
