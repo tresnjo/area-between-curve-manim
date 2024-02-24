@@ -11,7 +11,7 @@ class integral_diff(MovingCameraScene):
 
         grid = Axes(
             x_range=[x_min, x_max, delta_x], 
-            y_range=[x_min, x_max, delta_x],
+            y_range=[0, 4, delta_x],
             x_length=9,
             y_length=5.5,
             axis_config={
@@ -21,12 +21,12 @@ class integral_diff(MovingCameraScene):
             tips=False,
         )
 
-        # Function 1
+        # Function 1: y = x^2
         plot_1 = grid.plot(
                 lambda x: x**2, color=MAROON_A, use_smoothing=False)
         area_1 = grid.get_area(plot_1, x_range=(0,1)).set_color(MAROON_A)
         
-        # Function 2
+        # Function 2: y = sqrt(x)
         plot_2 = grid.plot(
                 lambda x: np.sqrt(x), color=MAROON_A, use_smoothing=False)
         area_2 = grid.get_area(plot_2, x_range=(0,1)).set_color(MAROON_A)
@@ -43,6 +43,6 @@ class integral_diff(MovingCameraScene):
 
         self.play(FadeIn(plot_2))
         self.wait(1)
-        
+
         self.play(Write(diff_region))
         self.wait(1)
